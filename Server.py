@@ -1,4 +1,5 @@
 from ListLib import List
+import os
 
 
 def init():
@@ -11,9 +12,14 @@ def input(c, file_name):
     try:
         file = open(file_name)
     except OSError:
-        return print("File not found!")
-    for line in file:
-        input_lang(c, line, file.readline().split(" "))
+        print("File not found!")
+        return 0
+    if os.stat(file_name).st_size == 0:
+        print("File is empty!")
+        return 0
+    else:
+        for line in file:
+            input_lang(c, line, file.readline().split(" "))
 
 
 def input_lang(c, key, param):

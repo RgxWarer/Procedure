@@ -4,15 +4,15 @@ import Server
 
 def main():
     if len(sys.argv) != 3:
-        return print("Вы не ввели нужные аргументы.")
+        return print("You have not entered necessary arguments.")
 
     input_name = sys.argv[1]
     output_name = sys.argv[2]
 
     c = Server.init()
-    Server.input(c, input_name)
-    Server.out(c, output_name)
-    Server.clear(c, output_name)
+    if Server.input(c, input_name) != 0:
+        Server.out(c, output_name)
+        Server.clear(c, output_name)
 
 
 if __name__ == '__main__':
