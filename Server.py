@@ -31,6 +31,7 @@ def input_lang(c, key, param):
         return print("Verify that the input is correct!")
 
 
+
 def input_OOP(c, param):
     element = ["OOP"] + param
     c['lang_list'].Add(element)
@@ -43,11 +44,15 @@ def input_Proc(c, param):
 
 def out(c, file_name):
     output_file = open(file_name, 'w')
-    output_file.write("Amount of elements = " + str(c['lang_list'].length) + "\n")
-    for i in range(c['lang_list'].length):
-        lang = c['lang_list'].GetByID(i)
-        output_file.write(str(i + 1))
-        out_lang(output_file, lang)
+    if c['lang_list'].length > 0:
+        output_file.write("Amount of elements = " + str(c['lang_list'].length) + "\n")
+        for i in range(c['lang_list'].length):
+            lang = c['lang_list'].GetByID(i)
+            output_file.write(str(i + 1))
+            out_lang(output_file, lang)
+    else:
+        output_file.write("No elements! \n")
+        return 0
 
 
 def out_lang(file, lang):

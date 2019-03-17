@@ -11,8 +11,8 @@ def main():
 
     c = Server.init()
     if Server.input(c, input_name) != 0:
-        Server.out(c, output_name)
-        Server.clear(c, output_name)
+        if Server.out(c, output_name) != 0:
+            Server.clear(c, output_name)
 
 
 if __name__ == '__main__':
