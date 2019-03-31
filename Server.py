@@ -1,5 +1,5 @@
 import os
-
+import datetime
 
 def Init():
     head = None
@@ -96,11 +96,17 @@ def Out_Lang(file, lang):
 
 
 def Out_OOP(file, lang):
-    file.write(": OOP language: inheritance = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write(": OOP language: inheritance = " + lang[1] + ", year = " + lang[2].strip() +
+               ", how old: " + str(How_Year(lang[2])) + "\n")
 
 
 def Out_Proc(file, lang):
-    file.write(": Procedure language: abstract = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write(": Procedure language: abstract = " + lang[1] + ", year = " + lang[2].strip() +
+               ", how old: " + str(How_Year(lang[2])) + "\n")
+
+
+def How_Year(lang):
+        return datetime.datetime.now().year - int(lang)
 
 
 def Clear(c, file):
