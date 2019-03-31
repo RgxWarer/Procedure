@@ -1,11 +1,43 @@
-from ListLib import List
 import os
-
-
 def init():
-    lang_list = List()
-    container = {'lang_list': lang_list}
+    head = None
+    length = 0
+    container = {'head': head,
+                 'length': length}
     return container
+
+
+def Node(value, next_el, prev_el):
+    node = {'value': value,
+            'next': next_el,
+            'prev': prev_el}
+    return node
+
+
+def Add(c, x):
+    c['length'] += 1
+    if c['head'] is None:
+        c['head'] = Node(x, None, None)
+        c['head']['next'] = c['head']['prev'] = c['head']
+
+    else:
+        new_link = Node(x, None, None)
+        last = c['head']['prev']
+        c['head']['prev'] = last['next'] = new_link
+        new_link['prev'] = last
+        new_link['next'] = c['head']
+
+
+def GetByID(c, key):
+    if c['head'] is not None:
+        current = c['head']
+        for k in range(key):
+            if c['head'] != c['head']['next']:
+                current = current['next']
+            else:
+                return "Out of range"
+        return current
+    return 'Empty List'
 
 
 def input(c, file_name):
@@ -31,25 +63,25 @@ def input_lang(c, key, param):
         return print("Verify that the input is correct!")
 
 
-
 def input_OOP(c, param):
     element = ["OOP"] + param
-    c['lang_list'].Add(element)
+    Add(c, element)
 
 
 def input_Proc(c, param):
     element = ["Proc"] + param
-    c['lang_list'].Add(element)
+    Add(c, element)
 
 
 def out(c, file_name):
     output_file = open(file_name, 'w')
-    if c['lang_list'].length > 0:
-        output_file.write("Amount of elements = " + str(c['lang_list'].length) + "\n")
-        for i in range(c['lang_list'].length):
-            lang = c['lang_list'].GetByID(i)
+    if c['length'] > 0:
+        output_file.write("Amount of elements = " + str(c['length']) + "\n")
+        for i in range(c['length']):
+            lang = GetByID(c, i)
+            param = lang['value']
             output_file.write(str(i + 1))
-            out_lang(output_file, lang)
+            out_lang(output_file, param)
     else:
         output_file.write("No elements! \n")
         return 0
@@ -72,8 +104,9 @@ def out_Proc(file, lang):
 
 def clear(c, file):
     output_file = open(file, 'a')
-    c['lang_list'].clear()
-    output_file.write("\nList empty. Number of elements = " + str(c['lang_list'].length) + " \n")
+    c['head'] = None
+    c['length'] = 0
+    output_file.write("\nList empty. Number of elements = " + str(c['length']) + " \n")
 
 
 

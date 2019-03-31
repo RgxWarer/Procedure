@@ -4,3 +4,13 @@ multiply 1998
 no 1997
 1
 single 1990
+1
+single 1885
+1
+multiply 1875
+2
+yes 2000
+2
+yes 2010
+2
+no 2012
