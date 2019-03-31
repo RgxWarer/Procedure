@@ -9,10 +9,10 @@ def main():
     input_name = sys.argv[1]
     output_name = sys.argv[2]
 
-    c = Server.init()
-    if Server.input(c, input_name) != 0:
-        if Server.out(c, output_name) != 0:
-            Server.clear(c, output_name)
+    c = Server.Init()
+    if Server.Input(c, input_name) != 0:
+        if Server.Out(c, output_name) != 0:
+            Server.Clear(c, output_name)
 
 
 if __name__ == '__main__':

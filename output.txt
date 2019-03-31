@@ -1,4 +1,4 @@
-Amount of elements = 8
+Amount of elements = 7
 1: OOP language: inheritance = multiply, year = 1998
 
 2: Procedure language: abstract = no, year = 1997
@@ -13,6 +13,5 @@ Amount of elements = 8
 
 7: Procedure language: abstract = yes, year = 2010
 
-8: Procedure language: abstract = no, year = 2012
 
 List empty. Number of elements = 0 
