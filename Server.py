@@ -96,7 +96,7 @@ def Out_Lang(file, lang):
 
 
 def Out_OOP(file, lang):
-    file.write(": OOP language: inheritance = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write(":\n\n")
 
 
 def Out_Proc(file, lang):

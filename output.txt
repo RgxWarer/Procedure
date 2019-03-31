@@ -1,13 +1,13 @@
 Amount of elements = 7
-1: OOP language: inheritance = multiply, year = 1998
+1:
 
 2: Procedure language: abstract = no, year = 1997
 
-3: OOP language: inheritance = single, year = 1990
+3:
 
-4: OOP language: inheritance = single, year = 1885
+4:
 
-5: OOP language: inheritance = multiply, year = 1875
+5:
 
 6: Procedure language: abstract = yes, year = 2000
 
