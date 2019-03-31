@@ -96,11 +96,13 @@ def Out_Lang(file, lang):
 
 
 def Out_OOP(file, lang):
-    file.write(": OOP language: inheritance = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write(": OOP language: inheritance = " + lang[1] +
+               ", number of mentions = " + lang[2] + ", year = " + lang[3] + "\n")
 
 
 def Out_Proc(file, lang):
-    file.write(": Procedure language: abstract = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write(": Procedure language: abstract = " + lang[1] +
+               ", number of mentions = " + lang[2] + ", year = " + lang[3] + "\n")
 
 
 def Clear(c, file):
