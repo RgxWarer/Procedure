@@ -41,6 +41,23 @@ def GetByID(c, key):
     return 'Empty List'
 
 
+def Sort(c):
+    for i in range(c['length'] - 1):
+        for j in range(0, c['length'] - i - 1):
+            tmp_el = GetByID(c, j)
+            tmp_min = None
+            if Compare(tmp_el['value'], GetByID(c, j + 1)['value']):
+                tmp_min = GetByID(c, j + 1)
+                tmp_el['prev']['next'] = tmp_min
+                tmp_min['next']['prev'] = tmp_el
+                tmp_el['next'] = tmp_min['next']
+                tmp_min['prev'] = tmp_el['prev']
+                tmp_el['prev'] = tmp_min
+                tmp_min['next'] = tmp_el
+                if tmp_el == c['head']:
+                    c['head'] = tmp_min
+
+
 def Input(c, file_name):
     try:
         file = open(file_name)
@@ -107,6 +124,13 @@ def Out_Proc(file, lang):
 
 def How_Year(lang):
         return datetime.datetime.now().year - int(lang)
+
+
+def Compare(arg1, arg2):
+    if How_Year(arg1[2]) > How_Year(arg2[2]):
+        return 1
+    else:
+        return 0
 
 
 def Clear(c, file):

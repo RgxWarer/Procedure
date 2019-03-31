@@ -11,6 +11,7 @@ def main():
 
     c = Server.Init()
     if Server.Input(c, input_name) != 0:
+        Server.Sort(c)
         if Server.Out(c, output_name) != 0:
             Server.Clear(c, output_name)
 

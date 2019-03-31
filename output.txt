@@ -1,10 +1,7 @@
-Amount of elements = 7
-1: OOP language: inheritance = multiply, year = 1998, how old: 21
-2: Procedure language: abstract = no, year = 1997, how old: 22
-3: OOP language: inheritance = single, year = 1990, how old: 29
-4: OOP language: inheritance = single, year = 1885, how old: 134
-5: OOP language: inheritance = multiply, year = 1875, how old: 144
-6: Procedure language: abstract = yes, year = 2000, how old: 19
-7: Procedure language: abstract = yes, year = 2010, how old: 9
+Amount of elements = 4
+1: OOP language: inheritance = no, year = 2000, how old: 19
+2: OOP language: inheritance = single, year = 1994, how old: 25
+3: Procedure language: abstract = no, year = 1993, how old: 26
+4: OOP language: inheritance = multiply, year = 1992, how old: 27
 
 List empty. Number of elements = 0 

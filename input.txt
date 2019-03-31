@@ -1,14 +1,8 @@
 1
-multiply 1998
-2
-no 1997
+multiply 1992
 1
-single 1990
-1
-single 1885
-1
-multiply 1875
+no 2000
 2
-yes 2000
-2
-yes 2010
+no 1993
+1
+single 1994
