@@ -3,15 +3,15 @@ Amount of elements = 7
 
 2: Procedure language: abstract = no, year = 1997
 
-3: OOP language: inheritance = single, year = 1990
+3: Functional language: typification = strong, lazy computing support = no, year = 1999
 
-4: OOP language: inheritance = single, year = 1885
+4: Functional language: typification = false, lazy computing support = yes, year = 1999
 
-5: OOP language: inheritance = multiply, year = 1875
+5: Functional language: typification = strong, lazy computing support = no, year = 2019
 
 6: Procedure language: abstract = yes, year = 2000
 
-7: Procedure language: abstract = yes, year = 2010
+7: OOP language: inheritance = yes, year = 2010
 
 
 List empty. Number of elements = 0 
