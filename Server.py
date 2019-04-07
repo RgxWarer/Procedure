@@ -77,6 +77,8 @@ def Input_Lang(c, key, param):
         Input_OOP(c, param)
     elif int(key) == 2:
         Input_Proc(c, param)
+    elif int(key) == 3:
+        Input_Func(c, param)
     else:
         return print("Verify that the input is correct!")
 
@@ -88,6 +90,11 @@ def Input_OOP(c, param):
 
 def Input_Proc(c, param):
     element = ["Proc"] + param
+    Add(c, element)
+
+
+def Input_Func(c, param):
+    element = ["Func"] + param
     Add(c, element)
 
 
@@ -110,6 +117,8 @@ def Out_Lang(file, lang):
         Out_OOP(file, lang)
     elif lang[0] == "Proc":
         Out_Proc(file, lang)
+    elif lang[0] == "Func":
+        Out_Func(file, lang)
 
 
 def Out_OOP(file, lang):
@@ -131,6 +140,11 @@ def Compare(arg1, arg2):
         return 1
     else:
         return 0
+
+def Out_Func(file, lang):
+    file.write(": Functional language: typification = " + lang[1] +
+               ", lazy computing support = " + lang[2] + ", year = " + lang[3] +
+               ", how old: " + str(How_Year(lang[3])) + "\n")
 
 
 def Clear(c, file):
