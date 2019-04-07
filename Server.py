@@ -129,22 +129,17 @@ def Out_Lang(file, lang):
 
 
 def Out_OOP(file, lang):
-    file.write(": OOP language: inheritance = " + lang['param'][1] +
-               ", number of mentions = " + lang['ment'] + ", year = " + lang['year'] +
-               ", how old: " + str(How_Year(lang)) + "\n")
+    file.write(":\n\n")
 
 
 def Out_Proc(file, lang):
     file.write(": Procedure language: abstract = " + lang['param'][1] +
                ", number of mentions = " + lang['ment'] + ", year = " + lang['year'] +
-               ", how old: " + str(How_Year(lang)) + "\n")
+               ", how old: " + str(How_Year(lang)) + "\n\n")
 
 
 def Out_Func(file, lang):
-    file.write(": Functional language: typification = " + lang['param'][1] +
-               ", lazy computing support = " + lang['param'][2] +
-               ", number of mentions = " + lang['ment'] +
-               ", year = " + lang['year'] + ", how old: " + str(How_Year(lang)) + "\n")
+    file.write(":\n\n")
 
 
 def How_Year(lang):
