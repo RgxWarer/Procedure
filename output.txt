@@ -1,17 +1,9 @@
-Amount of elements = 7
-1: OOP language: inheritance = multiply, year = 1998
-
-2: Procedure language: abstract = no, year = 1997
-
-3: OOP language: inheritance = single, year = 1990
-
-4: OOP language: inheritance = single, year = 1885
-
-5: OOP language: inheritance = multiply, year = 1875
-
-6: Procedure language: abstract = yes, year = 2000
-
-7: Procedure language: abstract = yes, year = 2010
-
+Amount of elements = 6
+1: Functional language: typification = strong, lazy computing support = no, number of mentions = 959, year = 1999, how old: 20
+2: Functional language: typification = false, lazy computing support = yes, number of mentions = 777, year = 1999, how old: 20
+3: OOP language: inheritance = multiply, number of mentions = 10970, year = 1998, how old: 21
+4: Procedure language: abstract = yes, number of mentions = 120123, year = 1998, how old: 21
+5: Procedure language: abstract = no, number of mentions = 12010, year = 1997, how old: 22
+6: OOP language: inheritance = single, number of mentions = 12341, year = 1990, how old: 29
 
 List empty. Number of elements = 0 

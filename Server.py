@@ -9,6 +9,13 @@ def Init():
     return container
 
 
+def NewElement(year, ment, param):
+    element = {'year': year,
+            'ment': ment,
+            'param': param}
+    return element
+
+
 def Node(value, next_el, prev_el):
     node = {'value': value,
             'next': next_el,
@@ -69,7 +76,7 @@ def Input(c, file_name):
         return 0
     else:
         for line in file:
-            Input_Lang(c, line, file.readline().split(" "))
+            Input_Lang(c, line, file.readline().strip().split(" "))
 
 
 def Input_Lang(c, key, param):
@@ -84,17 +91,17 @@ def Input_Lang(c, key, param):
 
 
 def Input_OOP(c, param):
-    element = ["OOP"] + param
+    element = NewElement(param[2], param[1], ["OOP"] + [param[0]])
     Add(c, element)
 
 
 def Input_Proc(c, param):
-    element = ["Proc"] + param
+    element = NewElement(param[2], param[1], ["Proc"] + [param[0]])
     Add(c, element)
 
 
 def Input_Func(c, param):
-    element = ["Func"] + param
+    element = NewElement(param[3], param[2], ["Func"] + [param[0]] + [param[1]])
     Add(c, element)
 
 
@@ -113,38 +120,42 @@ def Out(c, file_name):
 
 
 def Out_Lang(file, lang):
-    if lang[0] == "OOP":
+    if lang['param'][0] == "OOP":
         Out_OOP(file, lang)
-    elif lang[0] == "Proc":
+    elif lang['param'][0] == "Proc":
         Out_Proc(file, lang)
-    elif lang[0] == "Func":
+    elif lang['param'][0] == "Func":
         Out_Func(file, lang)
 
 
 def Out_OOP(file, lang):
-    file.write(": OOP language: inheritance = " + lang[1] + ", year = " + lang[2].strip() +
-               ", how old: " + str(How_Year(lang[2])) + "\n")
+    file.write(": OOP language: inheritance = " + lang['param'][1] +
+               ", number of mentions = " + lang['ment'] + ", year = " + lang['year'] +
+               ", how old: " + str(How_Year(lang)) + "\n")
 
 
 def Out_Proc(file, lang):
-    file.write(": Procedure language: abstract = " + lang[1] + ", year = " + lang[2].strip() +
-               ", how old: " + str(How_Year(lang[2])) + "\n")
+    file.write(": Procedure language: abstract = " + lang['param'][1] +
+               ", number of mentions = " + lang['ment'] + ", year = " + lang['year'] +
+               ", how old: " + str(How_Year(lang)) + "\n")
+
+
+def Out_Func(file, lang):
+    file.write(": Functional language: typification = " + lang['param'][1] +
+               ", lazy computing support = " + lang['param'][2] +
+               ", number of mentions = " + lang['ment'] +
+               ", year = " + lang['year'] + ", how old: " + str(How_Year(lang)) + "\n")
 
 
 def How_Year(lang):
-        return datetime.datetime.now().year - int(lang)
+        return datetime.datetime.now().year - int(lang['year'])
 
 
 def Compare(arg1, arg2):
-    if How_Year(arg1[2]) > How_Year(arg2[2]):
+    if How_Year(arg1) > How_Year(arg2):
         return 1
     else:
         return 0
-
-def Out_Func(file, lang):
-    file.write(": Functional language: typification = " + lang[1] +
-               ", lazy computing support = " + lang[2] + ", year = " + lang[3] +
-               ", how old: " + str(How_Year(lang[3])) + "\n")
 
 
 def Clear(c, file):

@@ -1,14 +1,12 @@
 1
-multiply 1998
+multiply 10970 1998
 2
-no 1997
-3
-strong no 1999
-3
-false yes 1999
-3
-strong no 2019
-2
-yes 2000
+no 12010 1997
 1
-yes 2010
+single 12341 1990
+2
+yes 120123 1998
+3
+strong no 959 1999
+3
+false yes 777 1999
