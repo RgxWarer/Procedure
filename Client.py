@@ -10,8 +10,8 @@ def main():
     output_name = sys.argv[2]
 
     c = Server.Init()
+    Server.Clear_File(c, output_name)
     if Server.Input(c, input_name) != 0:
-        open(output_name, 'w').close()
         if Server.Out(c, output_name) != 0:
             Server.Sort(c)
             Server.Out(c, output_name)

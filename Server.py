@@ -78,6 +78,7 @@ def Input(c, file_name):
         for line in file:
             if line:
                 Input_Lang(c, line.strip(), file.readline().strip().split(" "))
+        file.close()
 
 
 def Input_Lang(c, key, param):
@@ -154,8 +155,10 @@ def Out(c, file_name):
             param = lang['value']
             output_file.write(str(i + 1))
             Out_Lang(output_file, param)
+        output_file.close()
     else:
         output_file.write("No elements! \n")
+        output_file.close()
         return 0
 
 
@@ -171,8 +174,10 @@ def Out_Filter(c, file_name):
                 Out_Proc(output_file, param)
             else:
                 output_file.write(": \n")
+        output_file.close()
     else:
         output_file.write("No elements! \n")
+        output_file.close()
         return 0
 
 
@@ -220,6 +225,11 @@ def Clear(c, file):
     c['head'] = None
     c['length'] = 0
     output_file.write("\nList empty. Number of elements = " + str(c['length']) + " \n")
+    output_file.close()
+
+
+def Clear_File(c, file_name):
+    open(file_name, 'w').close()
 
 
 
