@@ -1,15 +1,1 @@
-Amount of elements = 6
-1:
-
-2:
-
-3:
-
-4: Procedure language: abstract = yes, number of mentions = 120123, year = 1998, how old: 21
-
-5: Procedure language: abstract = no, number of mentions = 12010, year = 1997, how old: 22
-
-6:
-
-
-List empty. Number of elements = 0 
+No elements! 

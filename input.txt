@@ -1,12 +1,6 @@
-1
-multiply 10970 1998
-2
-no 12010 1997
-1
-single 12341 1990
-2
-yes 120123 1998
 3
-strong no 959 1999
-3
-false yes 777 1999
+1 3 1999 12 asd
+5
+sdfds
+2
+1 109a 1

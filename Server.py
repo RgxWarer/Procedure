@@ -67,7 +67,7 @@ def Sort(c):
 
 def Input(c, file_name):
     try:
-        file = open(file_name)
+        file = open(file_name, 'r')
     except OSError:
         print("File not found!")
         return 0
@@ -76,44 +76,101 @@ def Input(c, file_name):
         return 0
     else:
         for line in file:
-            Input_Lang(c, line, file.readline().strip().split(" "))
+            if line:
+                Input_Lang(c, line.strip(), file.readline().strip().split(" "))
 
 
 def Input_Lang(c, key, param):
-    if int(key) == 1:
+
+    if key == "1":
         Input_OOP(c, param)
-    elif int(key) == 2:
+    elif key == "2":
         Input_Proc(c, param)
-    elif int(key) == 3:
+    elif key == "3":
         Input_Func(c, param)
     else:
         return print("Verify that the input is correct!")
 
 
 def Input_OOP(c, param):
-    element = NewElement(param[2], param[1], ["OOP"] + [param[0]])
-    Add(c, element)
+    OOP_txt = {0: "single",
+               1: "multiply",
+               2: "interface"}
+
+    if len(param) == 3:
+        try:
+            param[2] = int(param[2])
+            param[1] = int(param[1])
+            param[0] = OOP_txt[int(param[0])]
+            element = NewElement(param[2], param[1], ["OOP"] + [param[0]])
+            Add(c, element)
+        except:
+            print("Verify that the all parameters is correct.")
+    else:
+        print("Verify that the number of parameters is correct.")
 
 
 def Input_Proc(c, param):
-    element = NewElement(param[2], param[1], ["Proc"] + [param[0]])
-    Add(c, element)
+    bool_txt = {0: "no",
+                1: "yes"}
+    if len(param) == 3:
+        try:
+            param[2] = int(param[2])
+            param[1] = int(param[1])
+            param[0] = bool_txt[int(param[0])]
+            element = NewElement(param[2], param[1], ["Proc"] + [param[0]])
+            Add(c, element)
+        except:
+            print("Verify that the all parameters is correct.")
+    else:
+        print("Verify that the number of parameters is correct.")
 
 
 def Input_Func(c, param):
-    element = NewElement(param[3], param[2], ["Func"] + [param[0]] + [param[1]])
-    Add(c, element)
+    bool_txt = {0: "no",
+                1: "yes"}
+    FUNC_txt = {0: "strong",
+                1: "dynamic"}
+    if len(param) == 4:
+        try:
+            param[2] = int(param[2])
+            param[3] = int(param[3])
+            param[1] = bool_txt[int(param[1])]
+            param[0] = FUNC_txt[int(param[0])]
+            element = NewElement(param[3], param[2], ["Func"] + [param[0]] + [param[1]])
+            Add(c, element)
+        except:
+            print("Verify that the all parameters is correct.")
+    else:
+        print("Verify that the number of parameters is correct.")
 
 
 def Out(c, file_name):
-    output_file = open(file_name, 'w')
+    output_file = open(file_name, 'a')
     if c['length'] > 0:
-        output_file.write("Amount of elements = " + str(c['length']) + "\n")
+        output_file.write("\nAmount of elements = " + str(c['length']) + "\n")
         for i in range(c['length']):
             lang = GetByID(c, i)
             param = lang['value']
             output_file.write(str(i + 1))
             Out_Lang(output_file, param)
+    else:
+        output_file.write("No elements! \n")
+        return 0
+
+
+def Out_Filter(c, file_name):
+    output_file = open(file_name, 'a')
+    if c['length'] > 0:
+        output_file.write("\nAmount of elements = " + str(c['length']) + "\n")
+        for i in range(c['length']):
+            lang = GetByID(c, i)
+            param = lang['value']
+            output_file.write(str(i + 1))
+            if param['param'][0] == 'Proc':
+                Out_Proc(output_file, param)
+            else:
+                output_file.write(": \n")
     else:
         output_file.write("No elements! \n")
         return 0
@@ -129,17 +186,22 @@ def Out_Lang(file, lang):
 
 
 def Out_OOP(file, lang):
-    file.write(":\n\n")
+    file.write(": OOP language: inheritance = " + lang['param'][1] +
+               ", number of mentions = " + str(lang['ment']) + ", year = " + str(lang['year']) +
+               ", how old: " + str(How_Year(lang)) + "\n")
 
 
 def Out_Proc(file, lang):
     file.write(": Procedure language: abstract = " + lang['param'][1] +
-               ", number of mentions = " + lang['ment'] + ", year = " + lang['year'] +
-               ", how old: " + str(How_Year(lang)) + "\n\n")
+               ", number of mentions = " + str(lang['ment']) + ", year = " + str(lang['year']) +
+               ", how old: " + str(How_Year(lang)) + "\n")
 
 
 def Out_Func(file, lang):
-    file.write(":\n\n")
+    file.write(": Functional language: typification = " + lang['param'][1] +
+               ", lazy computing support = " + lang['param'][2] +
+               ", number of mentions = " + str(lang['ment']) +
+               ", year = " + str(lang['year']) + ", how old: " + str(How_Year(lang)) + "\n")
 
 
 def How_Year(lang):

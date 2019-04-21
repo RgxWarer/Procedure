@@ -11,8 +11,11 @@ def main():
 
     c = Server.Init()
     if Server.Input(c, input_name) != 0:
-        Server.Sort(c)
+        open(output_name, 'w').close()
         if Server.Out(c, output_name) != 0:
+            Server.Sort(c)
+            Server.Out(c, output_name)
+            Server.Out_Filter(c, output_name)
             Server.Clear(c, output_name)
 
 
@@ -20,3 +23,4 @@ if __name__ == '__main__':
     print("START")
     main()
     print("STOP")
+
