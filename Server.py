@@ -1,4 +1,5 @@
 import os
+from multipledispatch import dispatch
 
 
 def Init():
@@ -88,6 +89,32 @@ def Out(c, file_name):
         return 0
 
 
+def MultiOut(c, file_name):
+    output_file = open(file_name, 'w')
+    if c['length'] > 0:
+        for i in range(c['length']):
+            for j in range(i + 1, c['length']):
+                lang1 = GetByID(c, i)['value']
+                lang2 = GetByID(c, j)['value']
+                if lang1[0] == "OOP":
+                    if lang2[0] == "OOP":
+                        output_file.write("\nOOP and OOP\n")
+                    if lang2[0] == "Proc":
+                        output_file.write("\nOOP and PROC\n")
+                if lang1[0] == "Proc":
+                    if lang2[0] == "Proc":
+                        output_file.write("\nPROC and PROC\n")
+                    if lang2[0] == "OOP":
+                        output_file.write("\nPROC and OOP\n")
+
+                Out_Lang(output_file, lang1)
+                Out_Lang(output_file, lang2)
+
+    else:
+        output_file.write("No elements! \n")
+    return 0
+
+
 def Out_Lang(file, lang):
     if lang[0] == "OOP":
         Out_OOP(file, lang)
@@ -108,6 +135,8 @@ def Clear(c, file):
     c['head'] = None
     c['length'] = 0
     output_file.write("\nList empty. Number of elements = " + str(c['length']) + " \n")
+
+
 
 
 
