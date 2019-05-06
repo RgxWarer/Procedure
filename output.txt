@@ -1,16 +1,33 @@
 
 OOP and PROC
-: OOP language: inheritance = multiply, year = 1998
+OOP language: inheritance = multiply, year = 1998
 
-: Procedure language: abstract = no, year = 1997
+Procedure language: abstract = no, year = 1997
+
+
+OOP and PROC
+OOP language: inheritance = multiply, year = 1998
+
+Procedure language: abstract = no, year = 2000
 
 
 OOP and OOP
-: OOP language: inheritance = multiply, year = 1998
+OOP language: inheritance = multiply, year = 1998
 
-: OOP language: inheritance = single, year = 1990
+OOP language: inheritance = single, year = 2001
+
+PROC and PROC
+Procedure language: abstract = no, year = 1997
+
+Procedure language: abstract = no, year = 2000
+
 
 PROC and OOP
-: Procedure language: abstract = no, year = 1997
+Procedure language: abstract = no, year = 1997
 
-: OOP language: inheritance = single, year = 1990
+OOP language: inheritance = single, year = 2001
+
+PROC and OOP
+Procedure language: abstract = no, year = 2000
+
+OOP language: inheritance = single, year = 2001

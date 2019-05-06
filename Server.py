@@ -1,5 +1,4 @@
 import os
-from multipledispatch import dispatch
 
 
 def Init():
@@ -66,12 +65,12 @@ def Input_Lang(c, key, param):
 
 
 def Input_OOP(c, param):
-    element = ["OOP"] + param
+    element = [1] + param
     Add(c, element)
 
 
 def Input_Proc(c, param):
-    element = ["Proc"] + param
+    element = [2] + param
     Add(c, element)
 
 
@@ -96,15 +95,15 @@ def MultiOut(c, file_name):
             for j in range(i + 1, c['length']):
                 lang1 = GetByID(c, i)['value']
                 lang2 = GetByID(c, j)['value']
-                if lang1[0] == "OOP":
-                    if lang2[0] == "OOP":
+                if lang1[0] == 1:
+                    if lang2[0] == 1:
                         output_file.write("\nOOP and OOP\n")
-                    if lang2[0] == "Proc":
+                    if lang2[0] == 2:
                         output_file.write("\nOOP and PROC\n")
-                if lang1[0] == "Proc":
-                    if lang2[0] == "Proc":
+                if lang1[0] == 2:
+                    if lang2[0] == 2:
                         output_file.write("\nPROC and PROC\n")
-                    if lang2[0] == "OOP":
+                    if lang2[0] == 1:
                         output_file.write("\nPROC and OOP\n")
 
                 Out_Lang(output_file, lang1)
@@ -116,18 +115,18 @@ def MultiOut(c, file_name):
 
 
 def Out_Lang(file, lang):
-    if lang[0] == "OOP":
+    if lang[0] == 1:
         Out_OOP(file, lang)
-    elif lang[0] == "Proc":
+    elif lang[0] == 2:
         Out_Proc(file, lang)
 
 
 def Out_OOP(file, lang):
-    file.write(": OOP language: inheritance = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write("OOP language: inheritance = " + lang[1] + ", year = " + lang[2] + "\n")
 
 
 def Out_Proc(file, lang):
-    file.write(": Procedure language: abstract = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write("Procedure language: abstract = " + lang[1] + ", year = " + lang[2] + "\n")
 
 
 def Clear(c, file):
