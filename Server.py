@@ -67,17 +67,17 @@ def Input_Lang(c, key, param):
 
 
 def Input_OOP(c, param):
-    element = ["OOP"] + param
+    element = [1] + param
     Add(c, element)
 
 
 def Input_Proc(c, param):
-    element = ["Proc"] + param
+    element = [2] + param
     Add(c, element)
 
 
 def Input_Func(c, param):
-    element = ["Func"] + param
+    element = [3] + param
     Add(c, element)
 
 
@@ -102,26 +102,26 @@ def MultiOut(c, file_name):
             for j in range(i + 1, c['length']):
                 lang1 = GetByID(c, i)['value']
                 lang2 = GetByID(c, j)['value']
-                if lang1[0] == "OOP":
-                    if lang2[0] == "OOP":
+                if lang1[0] == 1:
+                    if lang2[0] == 1:
                         output_file.write("\nOOP and OOP\n")
-                    elif lang2[0] == "Proc":
+                    elif lang2[0] == 2:
                         output_file.write("\nOOP and PROC\n")
-                    elif lang2[0] == "Func":
+                    elif lang2[0] == 3:
                         output_file.write("\nOOP and Func\n")
-                elif lang1[0] == "Proc":
-                    if lang2[0] == "Proc":
+                elif lang1[0] == 2:
+                    if lang2[0] == 2:
                         output_file.write("\nPROC and PROC\n")
-                    elif lang2[0] == "OOP":
+                    elif lang2[0] == 1:
                         output_file.write("\nPROC and OOP\n")
-                    elif lang2[0] == "Func":
+                    elif lang2[0] == 3:
                         output_file.write("\nPROC and Func\n")
-                elif lang1[0] == "Func":
-                    if lang2[0] == "Func":
+                elif lang1[0] == 3:
+                    if lang2[0] == 3:
                         output_file.write("\nFunc and Func\n")
-                    elif lang2[0] == "OOP":
+                    elif lang2[0] == 1:
                         output_file.write("\nFunc and OOP\n")
-                    elif lang2[0] == "Proc":
+                    elif lang2[0] == 2:
                         output_file.write("\nFunc and Proc\n")
 
                 Out_Lang(output_file, lang1)
@@ -133,23 +133,23 @@ def MultiOut(c, file_name):
 
 
 def Out_Lang(file, lang):
-    if lang[0] == "OOP":
+    if lang[0] == 1:
         Out_OOP(file, lang)
-    elif lang[0] == "Proc":
+    elif lang[0] == 2:
         Out_Proc(file, lang)
-    elif lang[0] == "Func":
+    elif lang[0] == 3:
         Out_Func(file, lang)
 
 
 def Out_OOP(file, lang):
-    file.write(": OOP language: inheritance = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write("OOP language: inheritance = " + lang[1] + ", year = " + lang[2] + "\n")
 
 
 def Out_Proc(file, lang):
-    file.write(": Procedure language: abstract = " + lang[1] + ", year = " + lang[2] + "\n")
+    file.write("Procedure language: abstract = " + lang[1] + ", year = " + lang[2] + "\n")
 
 def Out_Func(file, lang):
-    file.write(": Functional language: typification = " + lang[1] +
+    file.write("Functional language: typification = " + lang[1] +
                ", lazy computing support = " + lang[2] + ", year = " + lang[3] + "\n")
 
 

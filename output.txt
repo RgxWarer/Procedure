@@ -1,90 +1,90 @@
 
 OOP and PROC
-: OOP language: inheritance = multiply, year = 1998
+OOP language: inheritance = multiply, year = 1998
 
-: Procedure language: abstract = no, year = 1997
-
-
-OOP and Func
-: OOP language: inheritance = multiply, year = 1998
-
-: Functional language: typification = strong, lazy computing support = no, year = 1999
+Procedure language: abstract = no, year = 1997
 
 
 OOP and Func
-: OOP language: inheritance = multiply, year = 1998
+OOP language: inheritance = multiply, year = 1998
 
-: Functional language: typification = strong, lazy computing support = no, year = 2002
+Functional language: typification = strong, lazy computing support = no, year = 1999
+
+
+OOP and Func
+OOP language: inheritance = multiply, year = 1998
+
+Functional language: typification = strong, lazy computing support = no, year = 2002
 
 
 OOP and PROC
-: OOP language: inheritance = multiply, year = 1998
+OOP language: inheritance = multiply, year = 1998
 
-: Procedure language: abstract = no, year = 2001
+Procedure language: abstract = no, year = 2001
 
 
 OOP and OOP
-: OOP language: inheritance = multiply, year = 1998
+OOP language: inheritance = multiply, year = 1998
 
-: OOP language: inheritance = multiply, year = 2000
-
-
-PROC and Func
-: Procedure language: abstract = no, year = 1997
-
-: Functional language: typification = strong, lazy computing support = no, year = 1999
+OOP language: inheritance = multiply, year = 2000
 
 
 PROC and Func
-: Procedure language: abstract = no, year = 1997
+Procedure language: abstract = no, year = 1997
 
-: Functional language: typification = strong, lazy computing support = no, year = 2002
+Functional language: typification = strong, lazy computing support = no, year = 1999
+
+
+PROC and Func
+Procedure language: abstract = no, year = 1997
+
+Functional language: typification = strong, lazy computing support = no, year = 2002
 
 
 PROC and PROC
-: Procedure language: abstract = no, year = 1997
+Procedure language: abstract = no, year = 1997
 
-: Procedure language: abstract = no, year = 2001
+Procedure language: abstract = no, year = 2001
 
 
 PROC and OOP
-: Procedure language: abstract = no, year = 1997
+Procedure language: abstract = no, year = 1997
 
-: OOP language: inheritance = multiply, year = 2000
+OOP language: inheritance = multiply, year = 2000
 
 
 Func and Func
-: Functional language: typification = strong, lazy computing support = no, year = 1999
+Functional language: typification = strong, lazy computing support = no, year = 1999
 
-: Functional language: typification = strong, lazy computing support = no, year = 2002
-
-
-Func and Proc
-: Functional language: typification = strong, lazy computing support = no, year = 1999
-
-: Procedure language: abstract = no, year = 2001
-
-
-Func and OOP
-: Functional language: typification = strong, lazy computing support = no, year = 1999
-
-: OOP language: inheritance = multiply, year = 2000
+Functional language: typification = strong, lazy computing support = no, year = 2002
 
 
 Func and Proc
-: Functional language: typification = strong, lazy computing support = no, year = 2002
+Functional language: typification = strong, lazy computing support = no, year = 1999
 
-: Procedure language: abstract = no, year = 2001
+Procedure language: abstract = no, year = 2001
 
 
 Func and OOP
-: Functional language: typification = strong, lazy computing support = no, year = 2002
+Functional language: typification = strong, lazy computing support = no, year = 1999
 
-: OOP language: inheritance = multiply, year = 2000
+OOP language: inheritance = multiply, year = 2000
+
+
+Func and Proc
+Functional language: typification = strong, lazy computing support = no, year = 2002
+
+Procedure language: abstract = no, year = 2001
+
+
+Func and OOP
+Functional language: typification = strong, lazy computing support = no, year = 2002
+
+OOP language: inheritance = multiply, year = 2000
 
 
 PROC and OOP
-: Procedure language: abstract = no, year = 2001
+Procedure language: abstract = no, year = 2001
 
-: OOP language: inheritance = multiply, year = 2000
+OOP language: inheritance = multiply, year = 2000
 
