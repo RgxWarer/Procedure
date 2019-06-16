@@ -9,7 +9,7 @@ def Init():
     return container
 
 
-def NewElement(year, ment, param):
+def New_Element(year, ment, param):
     element = {'year': year,
             'ment': ment,
             'param': param}
@@ -36,7 +36,7 @@ def Add(c, x):
         new_link['next'] = c['head']
 
 
-def GetByID(c, key):
+def Get_By_ID(c, key):
     if c['head'] is not None:
         current = c['head']
         for k in range(key):
@@ -51,10 +51,10 @@ def GetByID(c, key):
 def Sort(c):
     for i in range(c['length'] - 1):
         for j in range(0, c['length'] - i - 1):
-            tmp_el = GetByID(c, j)
+            tmp_el = Get_By_ID(c, j)
             tmp_min = None
-            if Compare(tmp_el['value'], GetByID(c, j + 1)['value']):
-                tmp_min = GetByID(c, j + 1)
+            if Compare(tmp_el['value'], Get_By_ID(c, j + 1)['value']):
+                tmp_min = Get_By_ID(c, j + 1)
                 tmp_el['prev']['next'] = tmp_min
                 tmp_min['next']['prev'] = tmp_el
                 tmp_el['next'] = tmp_min['next']
@@ -94,7 +94,7 @@ def Input_Lang(c, key, param):
 
 
 def Input_OOP(c, param):
-    OOP_txt = {0: "single",
+    oop_txt = {0: "single",
                1: "multiply",
                2: "interface"}
 
@@ -102,8 +102,8 @@ def Input_OOP(c, param):
         try:
             param[2] = int(param[2])
             param[1] = int(param[1])
-            param[0] = OOP_txt[int(param[0])]
-            element = NewElement(param[2], param[1], ["OOP"] + [param[0]])
+            param[0] = oop_txt[int(param[0])]
+            element = New_Element(param[2], param[1], ["OOP"] + [param[0]])
             Add(c, element)
         except:
             print("Verify that the all parameters is correct.")
@@ -119,7 +119,7 @@ def Input_Proc(c, param):
             param[2] = int(param[2])
             param[1] = int(param[1])
             param[0] = bool_txt[int(param[0])]
-            element = NewElement(param[2], param[1], ["Proc"] + [param[0]])
+            element = New_Element(param[2], param[1], ["Proc"] + [param[0]])
             Add(c, element)
         except:
             print("Verify that the all parameters is correct.")
@@ -130,15 +130,15 @@ def Input_Proc(c, param):
 def Input_Func(c, param):
     bool_txt = {0: "no",
                 1: "yes"}
-    FUNC_txt = {0: "strong",
+    func_txt = {0: "strong",
                 1: "dynamic"}
     if len(param) == 4:
         try:
             param[2] = int(param[2])
             param[3] = int(param[3])
             param[1] = bool_txt[int(param[1])]
-            param[0] = FUNC_txt[int(param[0])]
-            element = NewElement(param[3], param[2], ["Func"] + [param[0]] + [param[1]])
+            param[0] = func_txt[int(param[0])]
+            element = New_Element(param[3], param[2], ["Func"] + [param[0]] + [param[1]])
             Add(c, element)
         except:
             print("Verify that the all parameters is correct.")
@@ -151,7 +151,7 @@ def Out(c, file_name):
     if c['length'] > 0:
         output_file.write("\nAmount of elements = " + str(c['length']) + "\n")
         for i in range(c['length']):
-            lang = GetByID(c, i)
+            lang = Get_By_ID(c, i)
             param = lang['value']
             output_file.write(str(i + 1))
             Out_Lang(output_file, param)
@@ -167,7 +167,7 @@ def Out_Filter(c, file_name):
     if c['length'] > 0:
         output_file.write("\nAmount of elements = " + str(c['length']) + "\n")
         for i in range(c['length']):
-            lang = GetByID(c, i)
+            lang = Get_By_ID(c, i)
             param = lang['value']
             output_file.write(str(i + 1))
             if param['param'][0] == 'Proc':

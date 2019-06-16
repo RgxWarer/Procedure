@@ -26,9 +26,9 @@ class TestServer(TestCase):
         self.assertFalse(os.stat("output.txt").st_size)
 
     def test_New_Element(self):
-        temp1 = Server.NewElement(1998, 12341, ['OOP', 'interface'])
-        temp2 = Server.NewElement(1997, 12010, ['Proc', 'yes'])
-        temp3 = Server.NewElement(1999, 120123, ['Func', 'dynamic', 'no'])
+        temp1 = Server.New_Element(1998, 12341, ['OOP', 'interface'])
+        temp2 = Server.New_Element(1997, 12010, ['Proc', 'yes'])
+        temp3 = Server.New_Element(1999, 120123, ['Func', 'dynamic', 'no'])
         self.assertTrue(temp1 == self.oop and temp2 == self.prc and temp3 == self.fnc)
 
     def test_Add(self):
@@ -48,7 +48,7 @@ class TestServer(TestCase):
         self.assertTrue(1)
 
     def test_GetByID(self):
-        self.assertTrue(Server.GetByID(self.c, 1)['value'] == self.prc and Server.GetByID(self.c, 0)['value'] == self.oop and Server.GetByID(self.c, 2)['value'] == self.fnc)
+        self.assertTrue(Server.Get_By_ID(self.c, 1)['value'] == self.prc and Server.Get_By_ID(self.c, 0)['value'] == self.oop and Server.Get_By_ID(self.c, 2)['value'] == self.fnc)
 
     def test_Sort(self):
         Server.Sort(self.c)

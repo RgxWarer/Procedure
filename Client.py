@@ -2,7 +2,7 @@ import sys
 import Server
 
 
-def main():
+def Main():
     if len(sys.argv) != 3:
         return print("You have not entered necessary arguments.")
 
@@ -21,6 +21,6 @@ def main():
 
 if __name__ == '__main__':
     print("START")
-    main()
+    Main()
     print("STOP")
 
